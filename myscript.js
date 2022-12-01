@@ -5,13 +5,35 @@ const playButton = document.getElementById('play');
 
 playButton.addEventListener("click", function(){
     mainContainer.innerHTML= '';
+
+    //Creazione bombe
+    const bombList = [];
+    while(bombList.length < 16){
+        const randomNumber = getRandomNumber(1, 100);
+        if (!bombList.includes(randomNumber)){
+            bombList.push(randomNumber);
+        }
+        
+    
+    }
+    console.log(bombList);
+
+    //Creazione celle numerate:
     for (let i = 1; i <= 100; i++){
         
         const newDiv = document.createElement('div');
         newDiv.classList.add('square');
+
+        //EventListener delle celle
         newDiv.addEventListener("click", function(){
-            newDiv.classList.toggle('click');
-            console.log(newDiv);
+            if(bombList[i] === newDiv[i]){
+                alert('GAME OVER!!!')
+            } else {
+                newDiv.classList.toggle('click');
+            }
+
+            
+            
         })  
         
         mainContainer.append(newDiv);
@@ -22,7 +44,7 @@ playButton.addEventListener("click", function(){
 
 // 1)Generare 16 numeri casuali da 1 a 100:
   //-Preparo un array vuoto, dove inserirò poi i numeri corrispondenti alle bombe:
-  const bombList = [];
+  
   
   //Genero un numero casuale tra 1 e 100:
       //controllo se il numero è già stato generato;
@@ -31,15 +53,7 @@ playButton.addEventListener("click", function(){
 
   //Se il contenitore (bombList) contiene 16 valori, ho finito;
   //altrimento torno al punto 1;  
-while(bombList.length < 16){
-    const randomNumber = getRandomNumber(1, 100);
-    if (!bombList.includes(randomNumber)){
-        bombList.push(randomNumber);
-    }
-    
 
-}
-console.log(bombList);
 
 
   
