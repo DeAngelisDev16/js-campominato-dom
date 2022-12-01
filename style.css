@@ -52,6 +52,10 @@ main{
     background-color: aqua;
 }
 
+.bomb{
+    background-color: red;
+}
+
 footer{
     height: 10vh;
     display: flex;

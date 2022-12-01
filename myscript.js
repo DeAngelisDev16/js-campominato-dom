@@ -27,7 +27,10 @@ playButton.addEventListener("click", function(){
         //EventListener delle celle
         newDiv.addEventListener("click", function(){
             if(bombList[i] === newDiv[i]){
-                alert('GAME OVER!!!')
+                newDiv.classList.toggle('bomb');
+                
+                mainContainer.innerHTML= '';
+
             } else {
                 newDiv.classList.toggle('click');
             }
