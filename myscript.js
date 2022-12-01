@@ -26,10 +26,10 @@ playButton.addEventListener("click", function(){
 
         //EventListener delle celle
         newDiv.addEventListener("click", function(){
-            if(bombList[i] === newDiv[i]){
+            if(bombList.includes(i)){
                 newDiv.classList.toggle('bomb');
                 
-                mainContainer.innerHTML= '';
+                //mainContainer.innerHTML= '';
 
             } else {
                 newDiv.classList.toggle('click');
