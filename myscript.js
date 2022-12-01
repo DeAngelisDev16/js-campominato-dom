@@ -18,6 +18,10 @@ playButton.addEventListener("click", function(){
     }
     console.log(bombList);
 
+    //Gestione punteggio:
+    let userScore;
+    let gameOver;
+
     //Creazione celle numerate:
     for (let i = 1; i <= 100; i++){
         
@@ -28,11 +32,13 @@ playButton.addEventListener("click", function(){
         newDiv.addEventListener("click", function(){
             if(bombList.includes(i)){
                 newDiv.classList.toggle('bomb');
-                
+                alert('GAME OVER!');
                 //mainContainer.innerHTML= '';
+                
 
             } else {
                 newDiv.classList.toggle('click');
+                
             }
 
             
