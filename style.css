@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    max-height: 100vh;
+}
+
+header{
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+    
+
+main{
+    height: 80vh;
+    background-color: aquamarine;
+}
+
+
+#wrapper{
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}
+    
+
+
+.square{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 2px solid black;
+    text-align: center;
+    line-height: 3;
+}
+
+
+
+
+
+.click{
+    background-color: aqua;
+}
+
+footer{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+
+
