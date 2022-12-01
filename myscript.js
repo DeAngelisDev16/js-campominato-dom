@@ -27,20 +27,33 @@ playButton.addEventListener("click", function(){
   //Genero un numero casuale tra 1 e 100:
       //controllo se il numero è già stato generato;
       //se no =====> aggiungo numero al contenitore (bombList);
+      
 
   //Se il contenitore (bombList) contiene 16 valori, ho finito;
   //altrimento torno al punto 1;  
+while(bombList.length < 16){
+    const randomNumber = getRandomNumber(1, 100);
+    if (!bombList.includes(randomNumber)){
+        bombList.push(randomNumber);
+    }
+    
 
-
-//funzione per calcolo numero randomico:  
-function getRandomNumber(numMin, numMax){
-    return Math.floor(Math.random () * (numMax - numMin + 1)+ numMin);
 }
+console.log(bombList);
+
+
   
   
+  //funzione per calcolo numero randomico:  
+  function getRandomNumber(numMin, numMax){
+    if(numMin===numMax){
+        return numMax;
+    }
+    return Math.floor(Math.random () * (numMax - numMin + 1)+ numMin);
+  }
   
   //funzione per numero randomico unico:
-  function numeroRandomicoUnico (blacklist, min, max) {
+ /*  function numeroRandomicoUnico (blacklist, min, max) {
     let isValid = false;
     let randomNum;
 
@@ -53,4 +66,4 @@ function getRandomNumber(numMin, numMax){
        
        return randomNum;
     }
-  }
+  } */
