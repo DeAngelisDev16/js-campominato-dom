@@ -32,6 +32,12 @@ main{
     
 
 }
+
+#user_score{
+    padding: 1rem;
+    font-size: 25px;
+    color: red;
+}
     
 
 

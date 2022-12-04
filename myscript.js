@@ -8,6 +8,15 @@ playButton.addEventListener("click", function(){
 
     //Creazione bombe
     const bombList = [];
+
+    //Inizializzzione variabile gameover:
+    let gameOver = false;
+
+    //Dichiarazione variabile punteggio:
+    let points = 0;
+    let score = document.getElementById('user_score');
+
+    //Generazione delle 16 bombe randomiche:
     while(bombList.length < 16){
         const randomNumber = getRandomNumber(1, 100);
         if (!bombList.includes(randomNumber)){
@@ -18,9 +27,9 @@ playButton.addEventListener("click", function(){
     }
     console.log(bombList);
 
-    //Gestione punteggio:
-    let userScore;
-    let gameOver;
+  
+    
+    
 
     //Creazione celle numerate:
     for (let i = 1; i <= 100; i++){
@@ -30,16 +39,28 @@ playButton.addEventListener("click", function(){
 
         //EventListener delle celle
         newDiv.addEventListener("click", function(){
-            if(bombList.includes(i)){
-                newDiv.classList.toggle('bomb');
-                alert('GAME OVER!');
-                //mainContainer.innerHTML= '';
+            if(!gameOver){
+                if(bombList.includes(i) ){
+                    newDiv.classList.add('bomb');
+                    alert('BOOOM!');
+                    gameOver = true;
+                    score.innerHTML = 'La partita è terminata';
+
+            } else{
+                newDiv.classList.toggle('click');
+                points++;
+                score.innerHTML = 'Il tuo punteggio è'+ points++;
+
+            }
+               
+            } else {
+            console.log('Non puoi cliccare su altre caselle, la partita è terminata');
+            score.innerHTML = 'Non puoi cliccare su altre caselle';
+            
+         }
+                
                 
 
-            } else {
-                newDiv.classList.toggle('click');
-                
-            }
 
             
             
